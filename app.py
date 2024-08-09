@@ -6,8 +6,9 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
 
-# Set the NLTK data path to include the custom stopwords folder
+# Set the NLTK data path to include the custom stopwords and WordNet folders
 nltk.data.path.append('corpora/stopwords')
+nltk.data.path.append('corpora/wordnet')
 
 # Load stopwords from the custom location
 stop_words = set(stopwords.words('english'))
