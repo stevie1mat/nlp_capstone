@@ -12,7 +12,7 @@ nltk.data.path.append('corpora/wordnet')
 
 # Load stopwords from the custom location
 stop_words = set(stopwords.words('english'))
-stop_words.add('said', 'u', 'mr')
+stop_words.add(['said', 'u', 'mr'])
 # Initialize lemmatizer
 lemmatizer = WordNetLemmatizer()
 
