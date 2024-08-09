@@ -43,7 +43,7 @@ def load_data(category):
     return ' '.join(documents)
 
 # Streamlit app
-st.title("Word Cloud Generator")
+st.title("Topic Modeling Using BBC News")
 
 # Input field for category selection
 category = st.selectbox("Select a category:", ["business", "politics", "sports", "tech"])
