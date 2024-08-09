@@ -6,21 +6,11 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
 
-# Define a local stopwords list if you can't download from NLTK
-local_stopwords = set([
-    'i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours',
-    'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers',
-    'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves',
-    'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are',
-    'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does',
-    'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until',
-    'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into',
-    'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down',
-    'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here',
-    'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more',
-    'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so',
-    'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now'
-])
+# Set the NLTK data path to include the custom stopwords folder
+nltk.data.path.append('corpora/stopwords')
+
+# Load stopwords from the custom location
+stop_words = set(stopwords.words('english'))
 
 # Initialize lemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -28,7 +18,7 @@ lemmatizer = WordNetLemmatizer()
 # Preprocess function
 def preprocess(text):
     tokens = text.lower().split()
-    tokens = [word for word in tokens if word.isalpha() and word not in local_stopwords]
+    tokens = [word for word in tokens if word.isalpha() and word not in stop_words]
     tokens = [lemmatizer.lemmatize(word) for word in tokens]
     return ' '.join(tokens)
 
