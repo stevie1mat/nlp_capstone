@@ -46,7 +46,7 @@ def load_data(category):
 st.title("BBC News Category Word Cloud")
 
 # Input field for category selection
-category = st.selectbox("Select a category:", ["politics", "sports", "tech"])
+category = st.selectbox("Select a category:", ["business","politics", "sports", "tech"])
 
 # Load and preprocess data based on the selected category
 if category:
