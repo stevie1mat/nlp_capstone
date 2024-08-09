@@ -34,7 +34,7 @@ def preprocess(text):
 
 # Function to load and preprocess documents from a selected category
 def load_data(category):
-    folder_path = os.path.join('business', category)
+    folder_path = os.path.join('', category)  # Root directory
     documents = []
     for filename in sorted(os.listdir(folder_path)):
         if filename.endswith('.txt'):
@@ -43,10 +43,10 @@ def load_data(category):
     return ' '.join(documents)
 
 # Streamlit app
-st.title("BBC News Category Word Cloud")
+st.title("Word Cloud Generator")
 
 # Input field for category selection
-category = st.selectbox("Select a category:", ["business","politics", "sports", "tech"])
+category = st.selectbox("Select a category:", ["business", "politics", "sports", "tech"])
 
 # Load and preprocess data based on the selected category
 if category:
