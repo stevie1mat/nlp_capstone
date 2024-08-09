@@ -39,7 +39,7 @@ def load_data(category):
 st.title("Topic Modeling Using BBC News")
 
 # Input field for category selection
-category = st.selectbox("Select a category:", ["business", "politics", "sports", "tech"])
+category = st.selectbox("Select a category:", ["business", "entertainment", "sport", "tech"])
 
 # Load and preprocess data based on the selected category
 if category:
